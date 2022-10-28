@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyumeiren.github.io/"/>
-  <updated>2022-10-20T09:02:11.837Z</updated>
+  <updated>2022-10-28T08:10:05.056Z</updated>
   <id>http://huangyumeiren.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql增删改查(单表查询)</title>
+    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习/</id>
+    <published>2022-10-27T16:03:19.000Z</published>
+    <updated>2022-10-28T08:10:05.056Z</updated>
+    
+    <summary type="html">
+    
+      mysql的学习过程
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
