@@ -357,7 +357,7 @@
 select 列名 from 表名 where 列名 between 初值 and 终值
 select * from 表名 where 列名 not between 初值 and 终值
 </code></pre>
-<h4 id="like模糊查询-通配符（-代替0个或者多个字符，-代替任意-gt-gt-一个字符）"><a href="#like模糊查询-通配符（-代替0个或者多个字符，-代替任意-gt-gt-一个字符）" class="headerlink" title="like模糊查询 通配符（%代替0个或者多个字符，_代替任意&gt;&gt;一个字符）"></a>like模糊查询 通配符（%代替0个或者多个字符，_代替任意&gt;&gt;一个字符）</h4><pre><code class="yml">select * from 表名 where 列名 like &#39;条件&#39;
+<h4 id="like模糊查询"><a href="#like模糊查询" class="headerlink" title="like模糊查询"></a>like模糊查询</h4>通配符（%代替0个或者多个字符，_代替任意&gt;&gt;一个字符）<pre><code class="yml">select * from 表名 where 列名 like &#39;条件&#39;
 </code></pre>
 <h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4></li>
 <li>= 等于</li>
@@ -384,7 +384,7 @@ select * from 表名 where 列名 not between 初值 and 终值
 </li>
 <li>返回条数<pre><code class="yml">select * from 表名 limit 返回条数
 </code></pre>
-<h4 id="order-by排序-默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的-如果有相同的列值再进行后面的排序"><a href="#order-by排序-默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的-如果有相同的列值再进行后面的排序" class="headerlink" title="order by排序 默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的,如果有相同的列值再进行后面的排序"></a>order by排序 默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的,如果有相同的列值再进行后面的排序</h4><pre><code class="yml">select * from 表名 order by 列名1 asc/desc,列名2 asc/desc
+<h4 id="order-by排序"><a href="#order-by排序" class="headerlink" title="order by排序"></a>order by排序</h4>默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的,如果有相同的列值再进行后面的排序<pre><code class="yml">select * from 表名 order by 列名1 asc/desc,列名2 asc/desc
 </code></pre>
 <h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4></li>
 <li>avg 平均值<pre><code class="yml">select avg(列名) from 表名
