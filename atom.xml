@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huangyumeiren.github.io/"/>
-  <updated>2022-11-01T03:00:43.036Z</updated>
+  <updated>2022-11-02T13:59:09.764Z</updated>
   <id>http://huangyumeiren.github.io/</id>
   
   <author>
@@ -17,11 +17,51 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据库</title>
+    <link href="http://huangyumeiren.github.io/2022/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://huangyumeiren.github.io/2022/11/02/数据库/</id>
+    <published>2022-11-02T06:27:24.000Z</published>
+    <updated>2022-11-02T13:59:09.764Z</updated>
+    
+    <summary type="html">
+    
+      mysql的学习过程
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql增删改查(多表查询)</title>
+    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
+    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习笔记-二/</id>
+    <published>2022-10-27T16:03:19.000Z</published>
+    <updated>2022-11-02T13:58:36.486Z</updated>
+    
+    <summary type="html">
+    
+      mysql的学习过程
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://huangyumeiren.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mysql增删改查(单表查询)</title>
     <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0/"/>
     <id>http://huangyumeiren.github.io/2022/10/28/mysql学习/</id>
     <published>2022-10-27T16:03:19.000Z</published>
-    <updated>2022-11-01T03:00:43.036Z</updated>
+    <updated>2022-11-02T13:58:00.906Z</updated>
     
     <summary type="html">
     

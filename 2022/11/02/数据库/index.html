@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">mysql增删改查(单表查询) | 时间</title>
+  <title itemprop="name">数据库 | 时间</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -299,11 +299,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic1.imgdb.cn/item/636277dc16f2c2beb1300479.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/636277dc16f2c2beb1300479.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      mysql增删改查(单表查询)</h1>
+      数据库</h1>
       <p class="entry-census">
         <span>
           <a href="pengzhiwei.cn">
@@ -315,7 +315,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2022-10-28<span class="bull">
+        2022-11-2<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -329,116 +329,24 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol>
-<li>数据库登录<pre><code class="yml">mysql -uroot -p123456
+          <h2 id="启动-停止数据库"><a href="#启动-停止数据库" class="headerlink" title="启动/停止数据库"></a>启动/停止数据库</h2><pre><code class="yml">net start mysql57(启动)
+net stop mysql57(停止)
 </code></pre>
-</li>
-<li>查看数据库<pre><code class="yml">show databases
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><pre><code class="yml">mysql -h主机地址 -u用户名 -p用户密码 -p端口号
+如果连接本机localhost，且端口号是默认的3306，则可以输入：mysql -u用户名 -p
 </code></pre>
-</li>
-<li>显示当前数据库<pre><code class="yml">select database
+<h2 id="查看数据库状态"><a href="#查看数据库状态" class="headerlink" title="查看数据库状态"></a>查看数据库状态</h2><pre><code class="yml">\s
 </code></pre>
-</li>
-<li>创建数据库 <pre><code class="yml">create database 数据库名
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><pre><code class="yml">quit
+exit
 </code></pre>
-</li>
-<li>进入数据库<pre><code class="yml">use 数据库名称
+<h2 id="mysql导入-导出"><a href="#mysql导入-导出" class="headerlink" title="mysql导入/导出"></a>mysql导入/导出</h2><h3 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h3><pre><code class="yml">#先创建与文件中相同名的数据库——定位数据库——source sql文件路径（连接数据库）
+ source D:\sql\student.sql 
 </code></pre>
-</li>
-<li>查看表格<pre><code class="yml">show 数据库名称
+<h3 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h3><pre><code class="yml"> mysqldump -u 用户名 -p 数据库名 &gt; 存放位置及sql文件名（不用连接数据库）
 </code></pre>
-<h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><h3 id="表格数据查询"><a href="#表格数据查询" class="headerlink" title="表格数据查询"></a>表格数据查询</h3><h4 id="查询全部数据"><a href="#查询全部数据" class="headerlink" title="查询全部数据"></a>查询全部数据</h4><pre><code class="yml">select * from 表名
+<h3 id="导出数据库中的表"><a href="#导出数据库中的表" class="headerlink" title="导出数据库中的表"></a>导出数据库中的表</h3><pre><code class="yml"> mysqldump -u 用户名 -p 数据库名 表名 &gt; 存放位置及sql文件名（不用连接数据库）
 </code></pre>
-<h4 id="查询指定列的数据-支持多列查询"><a href="#查询指定列的数据-支持多列查询" class="headerlink" title="查询指定列的数据(支持多列查询)"></a>查询指定列的数据(支持多列查询)</h4><pre><code class="yml">select 列名1,列名2... from 表名
-</code></pre>
-<h4 id="去重（distinct）"><a href="#去重（distinct）" class="headerlink" title="去重（distinct）"></a>去重（distinct）</h4><pre><code class="yml">select distinct 列名 from 表名
-</code></pre>
-<h4 id="as别名"><a href="#as别名" class="headerlink" title="as别名"></a>as别名</h4></li>
-<li>给列起别名<pre><code class="yml">select 列名1 as 别名1,列名2 as别名2 from 表名
-</code></pre>
-</li>
-<li>给表起别名<pre><code class="yml">select 列名1,列名2... from 表名 as 别名
-</code></pre>
-<h4 id="where条件查询"><a href="#where条件查询" class="headerlink" title="where条件查询"></a>where条件查询</h4></li>
-</ol>
-<ul>
-<li>查询指定where条件的数据<pre><code class="yml">select * from 表名 where 条件
-</code></pre>
-<h5 id="in-amp-not-in"><a href="#in-amp-not-in" class="headerlink" title="in&amp;not in"></a><strong>in&amp;not in</strong></h5></li>
-<li>in指定查询范围（汉字加’’）<pre><code class="yml">select * from 表名 where 列名 in (列值1,列值2....)
-</code></pre>
-</li>
-<li>not in否定后面跟的条件 not（否）<pre><code class="yml">select * from 表名 where 列名 not in (列值1,列值2....)
-</code></pre>
-<h5 id="between…and-查询初值到终值之间的数值"><a href="#between…and-查询初值到终值之间的数值" class="headerlink" title="between…and(查询初值到终值之间的数值)"></a>between…and(查询初值到终值之间的数值)</h5><pre><code class="yml">select * from 表名 where 列名 between 初值 and 终值
-select 列名 from 表名 where 列名 between 初值 and 终值
-select * from 表名 where 列名 not between 初值 and 终值
-</code></pre>
-<h4 id="like模糊查询"><a href="#like模糊查询" class="headerlink" title="like模糊查询"></a>like模糊查询</h4>通配符（%代替0个或者多个字符，_代替任意&gt;&gt;一个字符）<pre><code class="yml">select * from 表名 where 列名 like &#39;条件&#39;
-</code></pre>
-<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4></li>
-<li>= 等于</li>
-<li>> 大于</li>
-<li>&lt; 小于</li>
-<li>>= 大于等于</li>
-<li>&lt;= 小于等于</li>
-<li>&lt;&gt;或者!= 不等于<h4 id="逻辑运算数符"><a href="#逻辑运算数符" class="headerlink" title="逻辑运算数符"></a>逻辑运算数符</h4></li>
-<li>and 需要多个条件同时满足才能有结果<pre><code class="yml">select * from 表名 where a and b
-</code></pre>
-</li>
-<li>or 满足其中一个条件就行<pre><code class="yml">select * from 表名 where a or b
-</code></pre>
-</li>
-<li>not（否）<h4 id="非空判断"><a href="#非空判断" class="headerlink" title="非空判断"></a>非空判断</h4></li>
-<li>列值为空的情况(is null)<pre><code class="yml">select 列名1,列名2.... from 表名 where 列名 is null
-</code></pre>
-</li>
-<li>列值不位空的情况(is not null)<pre><code class="yml">select 列名1,列名2.... from 表名 where 列名 is not null
-</code></pre>
-<h4 id="limit限制查询"><a href="#limit限制查询" class="headerlink" title="limit限制查询"></a>limit限制查询</h4></li>
-<li>初始位置，默认值为 0，表示第一行（只要默认值为0，就是从第一行开始）<pre><code class="yml">select * from 表名 limit 初始位置，行数
-</code></pre>
-</li>
-<li>返回条数<pre><code class="yml">select * from 表名 limit 返回条数
-</code></pre>
-<h4 id="order-by排序"><a href="#order-by排序" class="headerlink" title="order by排序"></a>order by排序</h4>默认升序，asc升序，desc为降序，如果排序中有2列进行排序，先排写在前面的,如果有相同的列值再进行后面的排序<pre><code class="yml">select * from 表名 order by 列名1 asc/desc,列名2 asc/desc
-</code></pre>
-<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4></li>
-<li>avg 平均值<pre><code class="yml">select avg(列名) from 表名
-</code></pre>
-</li>
-<li>count(*) 统计该表中数据总条数 count(列名)统计该列值数据的总条数</li>
-<li>max 最高值</li>
-<li>min 最低值</li>
-<li>sun 和</li>
-<li>聚合函数针对的是分组的内容，如果没有group by分组，则默认整体算作一组<h4 id="group-by分组查询"><a href="#group-by分组查询" class="headerlink" title="group by分组查询"></a>group by分组查询</h4></li>
-<li>在某张表中，根据某一列，把数据分成几组（相同的分成一组），然后对每一组数据使用聚合函数，聚合函数经常和分组查询一起使用</li>
-<li>出现在select中的字段，要么是分组字段，要么是聚合函数</li>
-<li><pre><code class="yml">select 列名, 函数名(列名) 
-from 表名
-where 条件 
-group by 列名
-order by 列名1/聚合函数 asc/desc，列名2/聚合函数 asc/desc
-</code></pre>
-</li>
-<li>分组依据<br>’每‘或者’各个‘字后面的字段，就是我们分组的依据<br>多条记录之间的某个字段值相同，该字段通常作为分组的依据</li>
-<li>可以按照任意字段分组，但分组完之后，比如group by sdept，只能查看sdept字段，如果想查看组内信息，需要借助于聚合函数<h4 id="having过滤"><a href="#having过滤" class="headerlink" title="having过滤"></a>having过滤</h4></li>
-<li>where 是对整张表中的数据进行过滤，可以单独使用，having 是对分组后的数据进行过滤，having不可以单独使用，必须和group by一起使用，放在group by的后面</li>
-<li>having发生在group by分组之后，因此having中可以使用分组的字段和聚合函数，无法直接取到其他字段</li>
-<li><pre><code class="yml">select 列名, 函数名(列名)  
-from 表名                          
-where 条件
-group by 列名                   
-having 条件
-order by 列名1/函数名 asc/desc，列名2/函数名 asc/desc
-limit 
-</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
-<li>书写顺序<br>select—distinct—from— where— group by— having—order by-limit</li>
-<li>执行顺序<br>from— where— group by — having —select—distinct—order by-limit</li>
-<li>where发生在分组group by之前，where中可以有任意字段，但绝对不能使用聚合函数</li>
-<li>group by为界，前面的不可以出现聚合函数，后面的都可以出现聚合函数，即只有分组后才可以使用聚合函数</li>
-</ul>
 
         </div>
         <!-- .entry-content -->
@@ -467,36 +375,19 @@ limit
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
           
-            <div class="post-nepre half previous">
+            <div class="post-nepre full next">
           
-            <a href="/2022/10/28/mysql学习笔记-二/" rel="prev">
+            <a href="/2022/10/28/mysql学习笔记-二/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6362781416f2c2beb1309a97.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6362781416f2c2beb1309a97.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                mysql增删改查(多表查询)</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2022/10/21/hello-world/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Hello World</h3>
+                mysql增删改查(多表查询)</h3>
                 <hr>
               </div>
             </a>
