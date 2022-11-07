@@ -41,7 +41,7 @@
     <link href="http://huangyumeiren.github.io/2022/11/03/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://huangyumeiren.github.io/2022/11/03/linux常用命令/</id>
     <published>2022-11-03T02:30:27.000Z</published>
-    <updated>2022-11-03T03:13:16.600Z</updated>
+    <updated>2022-11-04T06:33:15.558Z</updated>
     
     <summary type="html">
     
@@ -77,11 +77,11 @@
   </entry>
   
   <entry>
-    <title>mysql增删改查(单表查询)</title>
-    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习/</id>
+    <title>mysql增删改查(多表查询)</title>
+    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
+    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习笔记-二/</id>
     <published>2022-10-27T16:03:19.000Z</published>
-    <updated>2022-11-02T13:58:00.906Z</updated>
+    <updated>2022-11-02T13:58:36.486Z</updated>
     
     <summary type="html">
     
@@ -97,11 +97,11 @@
   </entry>
   
   <entry>
-    <title>mysql增删改查(多表查询)</title>
-    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
-    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习笔记-二/</id>
+    <title>mysql增删改查(单表查询)</title>
+    <link href="http://huangyumeiren.github.io/2022/10/28/mysql%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://huangyumeiren.github.io/2022/10/28/mysql学习/</id>
     <published>2022-10-27T16:03:19.000Z</published>
-    <updated>2022-11-02T13:58:36.486Z</updated>
+    <updated>2022-11-02T13:58:00.906Z</updated>
     
     <summary type="html">
     

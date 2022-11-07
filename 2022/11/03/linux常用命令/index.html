@@ -348,9 +348,42 @@ cd /usr/test01 切换到test01这个目录里面
 </code></pre>
 <h4 id="查看当前目录的的绝对路径"><a href="#查看当前目录的的绝对路径" class="headerlink" title="查看当前目录的的绝对路径"></a>查看当前目录的的绝对路径</h4><pre><code class="yml">pwd
 </code></pre>
-<h4 id="复制文件或目录"><a href="#复制文件或目录" class="headerlink" title="复制文件或目录"></a>复制文件或目录</h4><pre><code class="yml">
+<h4 id="复制文件或目录"><a href="#复制文件或目录" class="headerlink" title="复制文件或目录"></a>复制文件或目录</h4><h5 id="复制普通文件"><a href="#复制普通文件" class="headerlink" title="复制普通文件"></a>复制普通文件</h5><pre><code class="yml">cp 原文件 目标路径
 </code></pre>
-
+<h5 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h5><pre><code class="yml">cp -r 原文件 目标路径
+</code></pre>
+<h4 id="剪切-重命名"><a href="#剪切-重命名" class="headerlink" title="剪切/重命名"></a>剪切/重命名</h4><h5 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h5><pre><code class="yml">mv a.txt/home/test
+</code></pre>
+<h5 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h5><pre><code class="yml">mv a.txt aa.txt
+</code></pre>
+<h4 id="创建空白文件"><a href="#创建空白文件" class="headerlink" title="创建空白文件"></a>创建空白文件</h4><pre><code class="yml">touch 文件名
+</code></pre>
+<h4 id="rm删除文件"><a href="#rm删除文件" class="headerlink" title="rm删除文件"></a>rm删除文件</h4><h5 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h5><pre><code class="yml">rm 文件名         询问是否删除
+</code></pre>
+<pre><code class="yml">rm -f文件名       不询问,强制删除
+</code></pre>
+<h5 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h5><pre><code class="yml">rm -r目录名         询问是否删除
+</code></pre>
+<pre><code class="yml">rm -rf目录名        不询问,强制删除
+</code></pre>
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>>代表将输出的内容重定向到文件，使用&gt;重定向后，文件中原本的内容会被覆盖   命令&gt;文件</p>
+<p>>>代表输出的内容以追加的方式重定向到文件，使用&gt;&gt;重定向后，文件中原来的内容不会被覆盖，而是在原有的内容后面追加新的内容   命令>>文件</p>
+<h4 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h4><h5 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h5><p>显示文件内容</p>
+<p>-n显示行号</p>
+<h5 id="more"><a href="#more" class="headerlink" title="more"></a>more</h5><p>分页显示文件内容</p>
+<p>按空白键（space）就向下滚动一屏，按b键就会向上滚动一屏，按回车键往下显示一行</p>
+<p>按q退出</p>
+<h5 id="less"><a href="#less" class="headerlink" title="less"></a>less</h5><p>分页显示文件内容</p>
+<p>pgup   向上翻页<br>pgdn   向下翻页</p>
+<p>按回车键往下显示一行</p>
+<p>按q退出</p>
+<h5 id="head"><a href="#head" class="headerlink" title="head"></a>head</h5><p>显示文件前面几行，不给参数，默认显示前10行</p>
+<pre><code class="yml">head -n 20 /etc/services
+</code></pre>
+<h5 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h5><p>显示文件后面几行，默认显示最后10行</p>
+<p>  -n 指定行数</p>
+<pre><code>-f 实时刷新文件末尾内容(查看实时日志，监控文件增长)
+</code></pre><h4 id="vi-vim文本编辑"><a href="#vi-vim文本编辑" class="headerlink" title="vi/vim文本编辑"></a>vi/vim文本编辑</h4>
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
