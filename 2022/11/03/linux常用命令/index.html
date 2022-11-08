@@ -383,7 +383,55 @@ cd /usr/test01 切换到test01这个目录里面
 <h5 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h5><p>显示文件后面几行，默认显示最后10行</p>
 <p>  -n 指定行数</p>
 <pre><code>-f 实时刷新文件末尾内容(查看实时日志，监控文件增长)
-</code></pre><h4 id="vi-vim文本编辑"><a href="#vi-vim文本编辑" class="headerlink" title="vi/vim文本编辑"></a>vi/vim文本编辑</h4>
+</code></pre><h4 id="vi-vim文本编辑"><a href="#vi-vim文本编辑" class="headerlink" title="vi/vim文本编辑"></a>vi/vim文本编辑</h4><p><img src="https://pic1.imgdb.cn/item/6369fae416f2c2beb1ceb595.jpg" alt="vim"></p>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="chmod改变文件的权限"><a href="#chmod改变文件的权限" class="headerlink" title="chmod改变文件的权限"></a>chmod改变文件的权限</h4><p>-R 递归修改，将目录下的所有文件全都修改(包括子目录)</p>
+<h5 id="符号法"><a href="#符号法" class="headerlink" title="符号法"></a>符号法</h5><p>u所有者 g同组用户 o其它人 a所有人</p>
+<p>+增加权限 -减少权限 </p>
+<p>=不管之前是什么权限都改成赋于之后的权限</p>
+<p>r（可读）w（可写）x（可执行）</p>
+<pre><code class="yml">chmod u+w a.txt
+</code></pre>
+<pre><code class="yml">chmod g+w,o-r a.txt 
+</code></pre>
+<pre><code class="yml">chmod g=rwx a.txt
+</code></pre>
+<pre><code class="yml">chmod ug+rw a.txt
+</code></pre>
+<h5 id="数字法"><a href="#数字法" class="headerlink" title="数字法"></a>数字法</h5><p>r—-4<br>w—2<br>x—-1</p>
+<pre><code class="yml">chmod 777 a.txt
+</code></pre>
+<pre><code class="yml">chmod 755 a.txt
+</code></pre>
+<pre><code class="yml">chmod 744 a.txt
+</code></pre>
+<h4 id="chown改变文件或者目录的拥有者和属组"><a href="#chown改变文件或者目录的拥有者和属组" class="headerlink" title="chown改变文件或者目录的拥有者和属组"></a>chown改变文件或者目录的拥有者和属组</h4><h5 id="改变文件所有者"><a href="#改变文件所有者" class="headerlink" title="改变文件所有者"></a>改变文件所有者</h5><p>chown 用户名 文件</p>
+<pre><code class="yml">chown liaocx a.txt
+</code></pre>
+<h5 id="改变文件属组"><a href="#改变文件属组" class="headerlink" title="改变文件属组"></a>改变文件属组</h5><p>chown :组名 文件</p>
+<pre><code class="yml">chown :group1 a.txt
+</code></pre>
+<h5 id="同时改变文件所有者和属组"><a href="#同时改变文件所有者和属组" class="headerlink" title="同时改变文件所有者和属组"></a>同时改变文件所有者和属组</h5><p>chown 用户名:组名 文件</p>
+<pre><code class="yml">chown liaocx:group1 a.txt
+</code></pre>
+<h5 id="chgrp改变文件所属组"><a href="#chgrp改变文件所属组" class="headerlink" title="chgrp改变文件所属组"></a>chgrp改变文件所属组</h5><pre><code class="yml">chgrp 用户组 文件或目录
+</code></pre>
+<h3 id="打包与压缩"><a href="#打包与压缩" class="headerlink" title="打包与压缩"></a>打包与压缩</h3><h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><h5 id="tar打包同时用gzip压缩"><a href="#tar打包同时用gzip压缩" class="headerlink" title="tar打包同时用gzip压缩"></a>tar打包同时用gzip压缩</h5><p>tar -zcvf 压缩包名.tar.gz 文件目录</p>
+<pre><code class="yml">tar -zcvf abc.tar.gz abc
+</code></pre>
+<h5 id="用gzip解压后同时解包"><a href="#用gzip解压后同时解包" class="headerlink" title="用gzip解压后同时解包"></a>用gzip解压后同时解包</h5><p>tar -zxvf 压缩包名.tar.gz</p>
+<pre><code class="yml">tar -zxvf apache-tomcat-8.5.32.tar.gz
+</code></pre>
+<h5 id="这里的-C是指定解压到哪个目录"><a href="#这里的-C是指定解压到哪个目录" class="headerlink" title="这里的-C是指定解压到哪个目录"></a>这里的-C是指定解压到哪个目录</h5><pre><code class="yml">tar -zxvf apache-tomcat-8.5.32.tar.gz -C /opt
+</code></pre>
+<h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><h5 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h5><p>gzip 文件名</p>
+<pre><code class="yml">gzip a.txt
+</code></pre>
+<p>把a.txt压缩为a.txt.gz，同时a.txt文件不存在了</p>
+<h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><p>gzip -d 文件名</p>
+<pre><code class="yml">gzip -d a.txt.gz
+</code></pre>
+<p>把a.txt.gz解压，解压完成之后生成a.txt，a.txt.gz就不存在了</p>
+
         </div>
         <!-- .entry-content -->
         <div class="single-reward">
