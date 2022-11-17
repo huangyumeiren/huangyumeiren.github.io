@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2018/12 | 时间</title>
+  <title itemprop="name">shell基本语法 | 时间</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -313,185 +313,122 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
 <div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2022年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      11月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/11/11/shell基本语法/">
-                          <span style="color:#0bf;">
-                          11日09:33:10</span>
-                          shell基本语法
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/11/04/增加-修改-删除/">
-                          <span style="color:#0bf;">
-                          04日12:33:23</span>
-                          增加/修改/删除
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/11/03/linux常用命令/">
-                          <span style="color:#0bf;">
-                          03日10:30:27</span>
-                          linux常用命令
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/11/02/数据库/">
-                          <span style="color:#0bf;">
-                          02日14:27:24</span>
-                          数据库
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      10月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/10/28/mysql学习/">
-                          <span style="color:#0bf;">
-                          28日00:03:19</span>
-                          mysql增删改查(单表查询)
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/10/28/mysql学习笔记-二/">
-                          <span style="color:#0bf;">
-                          28日00:03:19</span>
-                          mysql增删改查(多表查询)
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2022/10/21/hello-world/">
-                          <span style="color:#0bf;">
-                          21日19:54:45</span>
-                          Hello World
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-            </div>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">shell基本语法</h1>
+            <p class="entry-census">彭志威&nbsp;·&nbsp;2022-11-11&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h2 id="脚本的格式要求"><a href="#脚本的格式要求" class="headerlink" title="脚本的格式要求"></a>脚本的格式要求</h2><ul>
+<li>脚本已#!/bin/bash开头，需要可执行权限</li>
+<li>常用执行方式<br>方式1：输入脚本的绝对路径或相对路径 （./xxx.sh）<br>方式2：sh+脚本<pre><code class="yml">sh xxx.sh
+</code></pre>
+</li>
+</ul>
+<h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><p>介绍:<br>1.Linux shell中的变量分为系统变量和自定义变量<br>2.系统变量：$HOME等<br>3.显示当前shell中所有变量</p>
+<h3 id="shell变量的定义"><a href="#shell变量的定义" class="headerlink" title="shell变量的定义"></a>shell变量的定义</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>1.定义变量：变量名=值<br>2.撤销变量：unset 变量<br>3.声明静态变量：readonly变量，静态变量不能unset</p>
+<h4 id="变量定义实操"><a href="#变量定义实操" class="headerlink" title="变量定义实操"></a>变量定义实操</h4><pre><code class="yml">#!/bin/bash
+#定义变量A
+A=100
+#输出变量需加上$
+echo A=$A
+echo &quot;A=$A&quot;
+#撤销变量，变量A便没了
+unset A
+echo A=$A
+#声明静态的变量B=2
+readonly B=2
+echo &quot;B=$B&quot;
+C=`date`
+D=$(date)
+echo C=$C
+echo D=$D
+</code></pre>
+<h4 id="定义变量的规则"><a href="#定义变量的规则" class="headerlink" title="定义变量的规则"></a>定义变量的规则</h4><ol>
+<li>变量名称可以由字母、数字和下划线组成，但是不能以数字开头。</li>
+<li>等号两边不能有空格</li>
+<li>变量名称一般习惯大写，这是一个规范，虽然小写也可以运行。<h4 id="将命令的返回值赋给变量"><a href="#将命令的返回值赋给变量" class="headerlink" title="将命令的返回值赋给变量"></a>将命令的返回值赋给变量</h4><pre><code class="yml">A=`date`反引号，运行里面的命令，并把结果返回给变量A,如果没有反引号表示的是将单词date给A
+A=$(date)等价于上面的语句
+</code></pre>
+</li>
+</ol>
+
+        </div>
+        <!-- .entry-content -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/11/04/增加-修改-删除/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                增加/修改/删除</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "zf6j8GFVDYvhsIqElBdr2yyg-gzGzoHsz",
+        appKey: "JcJhg9piqrYBoKwBMnxqUDPd",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="hojun.cn" class="profile gravatar"><img src="/images/qw.jpeg" itemprop="image" alt="彭志威" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="hojun.cn" itemprop="url" rel="author">彭志威</a>
+            </h3>
           </div>
         </div>
-      </article>
-    </div>
-  </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个学习的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
