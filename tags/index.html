@@ -53,7 +53,11 @@
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
-  </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -210,6 +214,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -397,6 +408,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -514,10 +532,19 @@
             <div class="tag-chips">
                 
                 
+                <a href="/tags/linux/" title="linux: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="linux" style="background-color: #F9EBEA;">linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/web/" title="web: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="web" style="background-color: #F9EBEA;">web
+                            data-tagname="web" style="background-color: #F5EEF8;">web
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -526,16 +553,7 @@
                 <a href="/tags/悦读/" title="悦读: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="悦读" style="background-color: #F5EEF8;">悦读
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/linux/" title="linux: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="linux" style="background-color: #D5F5E3;">linux
+                            data-tagname="悦读" style="background-color: #D5F5E3;">悦读
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -572,7 +590,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"web","weight":1,"link":"http://huangyumeiren.github.io/tags/web/"},{"text":"悦读","weight":2,"link":"http://huangyumeiren.github.io/tags/悦读/"},{"text":"linux","weight":2,"link":"http://huangyumeiren.github.io/tags/linux/"},{"text":"mysql","weight":4,"link":"http://huangyumeiren.github.io/tags/mysql/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"linux","weight":2,"link":"http://huangyumeiren.github.io/tags/linux/"},{"text":"web","weight":1,"link":"http://huangyumeiren.github.io/tags/web/"},{"text":"悦读","weight":2,"link":"http://huangyumeiren.github.io/tags/悦读/"},{"text":"mysql","weight":4,"link":"http://huangyumeiren.github.io/tags/mysql/"}], {
         autoResize: true
     });
 </script>
@@ -775,6 +793,13 @@ $(document).ready(function() {
                 <a href="/categories/python/">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   python
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/docker/">
+                  <i class="fa fa-envira" aria-hidden="true"></i>
+                  docker
                 </a>
               </li>
             

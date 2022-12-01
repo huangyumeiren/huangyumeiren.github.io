@@ -53,7 +53,11 @@
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
-  </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -210,6 +214,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -319,7 +330,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic1.imgdb.cn/item/63632a0b16f2c2beb10fa94e.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/63632a0b16f2c2beb10fa94e.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic1.imgdb.cn/item/63632a0b16f2c2beb10fa94e.png);" src="" data-src="https://pic1.imgdb.cn/item/63632a0b16f2c2beb10fa94e.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -349,7 +360,49 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="文件与目录"><a href="#文件与目录" class="headerlink" title="文件与目录"></a>文件与目录</h3><h4 id="显示目录下的内容"><a href="#显示目录下的内容" class="headerlink" title="显示目录下的内容"></a>显示目录下的内容</h4><pre><code class="yml">ls -l 显示目录下文件的详细信息
+          <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="虚拟机目录"><a href="#虚拟机目录" class="headerlink" title="虚拟机目录"></a>虚拟机目录</h3><h4 id="目录含义"><a href="#目录含义" class="headerlink" title="目录含义"></a>目录含义</h4><p>/bin ：存放着最经常使用的命令</p>
+<p>/home ：存放普通用户的主目录，一般该目录名是以用户的账号命名</p>
+<p>/root ：该目录为系统管理员，也称作超级权限者的用户主目录（根目录）</p>
+<p>/boot：Linux启动相关文件</p>
+<p>/lib：系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。</p>
+<p>/lost+ found这个目录一般情况下是空的,当系统非法关机后,这里就存放了一些文件</p>
+<p>/etc：系统管理所需配置和子文件目录</p>
+<p>/user：用户应用程序和文件</p>
+<p>/proc[不能动]：是虚拟目录，系统内存映射，访问这个目录获取系统信息</p>
+<p>/srv[不能动]：存放服务启动后所需数据</p>
+<p>/sys[不能动]：该目录安装了2.6内核新出现的文件系统</p>
+<p>/tmp：存放临时文件</p>
+<p>/mnt：存放挂载文件</p>
+<p>/opt：给主机额外安装软件的目录，即软件存放目录</p>
+<p>/user/local：软件安装后的目标目录，一般是编译源码的方式安装的程序</p>
+<h4 id="Linux颜色含义"><a href="#Linux颜色含义" class="headerlink" title="Linux颜色含义"></a>Linux颜色含义</h4><p>蓝色表示目录，白色表示文件，红色表示压缩文件，绿色表示可执行权限</p>
+<h3 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h3><p>vi、vim都是编辑命令，vim是vi的增强版，它们有三种模式，一般模式，编辑模式(能输入内容)，命令模式。</p>
+<p>一般模式：输入的内容看不见</p>
+<p>编辑模式：可以自由输入内容，可见</p>
+<p>命令模式：在文件末尾位置，可见</p>
+<p>命令模式》一般模式：vim或vi</p>
+<p>一般模式》编辑模式：i、o、a、r等按键</p>
+<p>编辑模式》一般模式：esc</p>
+<p>一般模式》命令模式：:，/</p>
+<p>:wq：保存退出</p>
+<p>:q：不保存退出</p>
+<p>:q!：强制退出</p>
+<p>自动补全文件名：tab</p>
+<p>拷贝当前行（一般模式）：yy，并粘贴输入p</p>
+<p>拷贝当前行向下的i行：iyy。</p>
+<p>删除当前行：dd</p>
+<p>删除当前行向下的i行idd</p>
+<p>在文件中查找某个单词（命令模式）敲/,回车查找，输入n就是查找下一个</p>
+<p>设置文件的行号（：进入命令模式）：命令行下set nu</p>
+<p>取消文件的行号：set nonu</p>
+<p>使用快捷键到该文档的最末行[G]和最首行[gg]（一般模式下）</p>
+<p>在一个文件中输入”hello”然后又撤销这个动作，一般模式下按u</p>
+<p>立即关机：shutdown -h now</p>
+<p>一分钟后关机：shutdown -h 1</p>
+<p>重启计算机：reboot</p>
+<p>获取帮助信息：man 【命令或配置文件】（按空格显示更多帮助信息）</p>
+<p>获取内置命令帮助信息：help 命令</p>
+<h3 id="文件与目录"><a href="#文件与目录" class="headerlink" title="文件与目录"></a>文件与目录</h3><h4 id="显示目录下的内容"><a href="#显示目录下的内容" class="headerlink" title="显示目录下的内容"></a>显示目录下的内容</h4><pre><code class="yml">ls -l 显示目录下文件的详细信息
 ls -a 显示目录下的所有文件（包括隐藏文件）
 ls -lh 显示目录下文件的详细信息（自动匹配单位，K,M,G）
 ls -ld 显示指定目录的详细信息（不是目录下的文件，是该目录本身的信息
@@ -435,6 +488,7 @@ cd /usr/test01 切换到test01这个目录里面
 </code></pre>
 <h5 id="chgrp改变文件所属组"><a href="#chgrp改变文件所属组" class="headerlink" title="chgrp改变文件所属组"></a>chgrp改变文件所属组</h5><pre><code class="yml">chgrp 用户组 文件或目录
 </code></pre>
+<h5 id="查看文件所有者"><a href="#查看文件所有者" class="headerlink" title="查看文件所有者"></a>查看文件所有者</h5><p>ls -ahl</p>
 <h3 id="打包与压缩"><a href="#打包与压缩" class="headerlink" title="打包与压缩"></a>打包与压缩</h3><h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><h5 id="tar打包同时用gzip压缩"><a href="#tar打包同时用gzip压缩" class="headerlink" title="tar打包同时用gzip压缩"></a>tar打包同时用gzip压缩</h5><p>tar -zcvf 压缩包名.tar.gz 文件目录</p>
 <pre><code class="yml">tar -zcvf abc.tar.gz abc
 </code></pre>
@@ -465,7 +519,7 @@ cd /usr/test01 切换到test01这个目录里面
           
             <a href="/2022/11/04/增加-修改-删除/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png">
+                <img class="lazyload" src="" data-src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png">
               </div>
               <span class="label">
               Previous Post</span>
@@ -483,7 +537,7 @@ cd /usr/test01 切换到test01这个目录里面
           
             <a href="/2022/11/02/数据库/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png">
+                <img class="lazyload" src="" data-src="https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6362782f16f2c2beb130cd46.png">
               </div>
               <span class="label">
               Next Post</span>
@@ -730,6 +784,13 @@ $(document).ready(function() {
                 <a href="/categories/python/">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   python
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/docker/">
+                  <i class="fa fa-envira" aria-hidden="true"></i>
+                  docker
                 </a>
               </li>
             

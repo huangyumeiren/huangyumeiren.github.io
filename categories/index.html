@@ -53,7 +53,11 @@
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
-  </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -210,6 +214,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -397,6 +408,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -514,19 +532,19 @@
                 
                 
                 
-                <a href="/categories/技术/" title="技术: 1">
+                <a href="/categories/linux/" title="linux: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">技术
-                        <span class="tag-length">1</span>
+                            style="background-color: #F9EBEA;">linux
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/linux/" title="linux: 1">
+                <a href="/categories/技术/" title="技术: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">linux
+                            style="background-color: #F5EEF8;">技术
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -583,7 +601,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"技术","max":5},{"name":"linux","max":5},{"name":"mysql","max":5}],
+            indicator: [{"name":"linux","max":5},{"name":"技术","max":5},{"name":"mysql","max":5}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -594,7 +612,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,1,4],
+                    value : [2,1,4],
                     name : '文章分类数量'
                 }
             ]
@@ -803,6 +821,13 @@ $(document).ready(function() {
                 <a href="/categories/python/">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   python
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/docker/">
+                  <i class="fa fa-envira" aria-hidden="true"></i>
+                  docker
                 </a>
               </li>
             

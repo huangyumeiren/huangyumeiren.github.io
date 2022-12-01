@@ -53,7 +53,11 @@
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
-  </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -210,6 +214,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -317,7 +328,7 @@
   
     <div class="pattern-center ">
       <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/lab.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+        <img src="" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/lab.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
       </div>
       <header class="pattern-header ">
         <h1 class="entry-title">
@@ -568,6 +579,13 @@ $(document).ready(function() {
                 <a href="/categories/python/">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   python
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/docker/">
+                  <i class="fa fa-envira" aria-hidden="true"></i>
+                  docker
                 </a>
               </li>
             

@@ -53,7 +53,11 @@
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
   }
-  </script>
+  <!--自定义看板娘-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="/live2d-widget/autoload.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  
   <style type="text/css">
   .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
   </style>
@@ -210,6 +214,13 @@
                         </a>
                       </li>
                     
+                      <li>
+                        <a href="/categories/docker/">
+                          <i class="fa fa-envira" aria-hidden="true"></i>
+                          docker
+                        </a>
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -317,6 +328,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://pic.imgdb.cn/item/637f1e7016f2c2beb1a51f29.png);" src="" data-src="https://pic.imgdb.cn/item/637f1e7016f2c2beb1a51f29.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      shell基本语法</h1>
+      <p class="entry-census">
+        <span>
+          <a href="hojun.cn">
+            <img src="/images/qw.jpeg">
+          </a>
+        </span>
+        <span>
+          <a href="hojun.cn">彭志威</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2022-11-11<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -324,22 +359,22 @@
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-          <header class="entry-header">
-            <h1 class="entry-title">shell基本语法</h1>
-            <p class="entry-census">彭志威&nbsp;·&nbsp;2022-11-11&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
-        
         <div class="entry-content">
           <h2 id="脚本的格式要求"><a href="#脚本的格式要求" class="headerlink" title="脚本的格式要求"></a>脚本的格式要求</h2><ul>
 <li>脚本已#!/bin/bash开头，需要可执行权限</li>
+<li>#This is my First shell //这里的#号属于注解，没有任何的意义，SHELL 不会解析它。</li>
 <li>常用执行方式<br>方式1：输入脚本的绝对路径或相对路径 （./xxx.sh）<br>方式2：sh+脚本<pre><code class="yml">sh xxx.sh
 </code></pre>
 </li>
 </ul>
+<h2 id="shell关键字"><a href="#shell关键字" class="headerlink" title="shell关键字"></a>shell关键字</h2><p>常用的关键字如下：<br>echo：打印文字到屏幕<br>exec：执行另一个 Shell 脚本<br>read：读标准输入<br>expr：对整数型变量进行算术运算<br>test：用于测试变量是否相等、 是否为空、文件类型等<br>exit：退出</p>
 <h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><p>介绍:<br>1.Linux shell中的变量分为系统变量和自定义变量<br>2.系统变量：$HOME等<br>3.显示当前shell中所有变量</p>
-<h3 id="shell变量的定义"><a href="#shell变量的定义" class="headerlink" title="shell变量的定义"></a>shell变量的定义</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><p>1.定义变量：变量名=值<br>2.撤销变量：unset 变量<br>3.声明静态变量：readonly变量，静态变量不能unset</p>
+<h3 id="shell变量的定义"><a href="#shell变量的定义" class="headerlink" title="shell变量的定义"></a>shell变量的定义</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ol>
+<li>定义变量：变量=值 <em>等号两边不能留有空格</em></li>
+<li>撤销变量：unset 变量</li>
+<li>输出变量：echo $变量</li>
+<li>声明静态变量： readonly 变量，注意：不能unset</li>
+</ol>
 <h4 id="变量定义实操"><a href="#变量定义实操" class="headerlink" title="变量定义实操"></a>变量定义实操</h4><pre><code class="yml">#!/bin/bash
 #定义变量A
 A=100
@@ -357,6 +392,9 @@ D=$(date)
 echo C=$C
 echo D=$D
 </code></pre>
+<p>简单的理解变量，相当于定义一个别名-名称，引用的时候加上$符号就可以了。</p>
+<p>例如定义变量 name=wuguangke </p>
+<p>执行 echo $name 将会显示 wuguangke </p>
 <h4 id="定义变量的规则"><a href="#定义变量的规则" class="headerlink" title="定义变量的规则"></a>定义变量的规则</h4><ol>
 <li>变量名称可以由字母、数字和下划线组成，但是不能以数字开头。</li>
 <li>等号两边不能有空格</li>
@@ -365,6 +403,311 @@ A=$(date)等价于上面的语句
 </code></pre>
 </li>
 </ol>
+<h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><p>$n ( 功能描述: n为数字, $0代表命令本身，$1-$9代表第一到第九个参数, 10以上的参数需要用大括号包含，如${10}<br>        $<em> (功能描述:命令行中所有的参数，$</em>把所有参数看成一个整体)<br>        $@ (功能描述:这个变量也代表命令行中所有的参数,不过$@把每个参数区分对待，分别输出)<br>        $# (功能描述:命令行中所有参数的个数)</p>
+<h4 id="SHELL-常见的系统变量解析"><a href="#SHELL-常见的系统变量解析" class="headerlink" title="SHELL 常见的系统变量解析:"></a>SHELL 常见的系统变量解析:</h4><p>$0 当前程序的名称</p>
+<p>$n （描述：n为数字，$0代表脚本名称，10以内参数用$1-9 表 示 ， 10 以 上 的 需 要 用 大 括 号 包 含 ， 9表示，10以上的需要用大括号包含，9表示，10以上的需要用大括号包含，{10}）</p>
+<p>$* （描述：代表命令行中所有的参数，把所有参数看成一个整体）</p>
+<p>$@ （描述：也代表命令行中所有的参数，不过把每个参数区分对待）</p>
+<p>$#  (功能描述：获取所有输入参数个数，常用于循环)</p>
+<p>$? 命令或程序执行完后的状态，一般返回 0 表示执行成功。</p>
+<p>$UID 当前用户的 ID</p>
+<p>$PWD 当前所在的目录</p>
+<p>$HOME 当前目录的家目录 </p>
+<p>$$ 程序本身的PID</p>
+<p>编写一个shell脚本position.sh，在脚本中获取到命令行的各个参数信息。</p>
+<pre><code>vim myshell.sh
+输入如下内容
+#!/bin/bash
+echo &quot;0=$0 1=$1 2=$2&quot;
+echo &quot;所有的参数=$*&quot;
+echo &quot;$@&quot;
+echo &quot;参数的个数=$#&quot;
+sh myshell.sh 10 20
+</code></pre><p><img src="https://img-blog.csdnimg.cn/20210717195700685.png" alt="结果"></p>
+<h4 id="常用判断条件"><a href="#常用判断条件" class="headerlink" title="常用判断条件"></a>常用判断条件</h4><p>-f         判断文件是否存在 eg: if [ -f filename ]；<br>        -d         判断目录是否存在 eg: if [ -d dir     ]；<br>        -eq        等于，应用于整型比较 equal；<br>        -ne        不等于，应用于整型比较 not equal；<br>        -lt        小于，应用于整型比较 letter；<br>        -gt        大于，应用于整型比较 greater；<br>        -le        小于或等于，应用于整型比较；<br>        -ge     大于或等于，应用于整型比较；<br>        -a        双方都成立（and） 逻辑表达式 –a 逻辑表达式；<br>        -o        单方成立（or） 逻辑表达式 –o 逻辑表达式；<br>        -z        空字符串；<br>        -x      是否具有可执行权限<br>        ||      单方成立；<br>        &amp;&amp;      双方都成立表达式。</p>
+<h4 id="read-读取控制台输入"><a href="#read-读取控制台输入" class="headerlink" title="read 读取控制台输入"></a>read 读取控制台输入</h4><p>基本语法</p>
+<p>read /[选项/]/[参数/]</p>
+<p>选项：</p>
+<p>-p:指定读取值的提示符；</p>
+<p>-t:指定读取时等待的时间（秒），如果没有在指定的时间内输入就不再等待</p>
+<p>参数</p>
+<p>变量:指定读取数据的变量名</p>
+<pre><code>#!/bin/bash
+#案例1 :读取控制台输入一个num1值
+read -p &quot;请输入指定的num1=&quot; NUM1
+echo &quot;输入的num1=$NUM1&quot;
+#案例2 :读取控制台输入一个num2值，在5秒内输入
+read -t 5 -p &quot;请输入num2=&quot; NUM2
+echo &quot;输入的num2=$NUM2&quot;               
+
+</code></pre><p><img src="https://img-blog.csdnimg.cn/2021071719595812.png#pic_center" alt="结果"></p>
+<p><img src="https://pic.imgdb.cn/item/63803b0d16f2c2beb1354ea8.png" alt="read"></p>
+<pre><code>vim scripts11.sh
+#!/bin/bash
+#提示用户输入分数
+read -p &quot;请输入分数&quot; score
+if [ &quot;$score&quot; -ge 90 -a &quot;$score&quot; -le 100 ]
+then
+        echo &quot;优秀&quot;
+elif [ &quot;$score&quot; -ge 80 -a &quot;$score&quot; -lt 90 ]
+then
+        echo &quot;良好&quot;
+elif [ &quot;$score&quot; -ge 70 -a &quot;$score&quot; -lt 80 ]
+then
+        echo &quot;一般&quot;
+elif [ &quot;$score&quot; -ge 60 -a &quot;$score&quot; -lt 70 ]
+then
+        echo &quot;及格&quot;
+else
+        echo &#39;不及格&#39;
+fi
+</code></pre><h2 id="shell流程控制语句"><a href="#shell流程控制语句" class="headerlink" title="shell流程控制语句"></a>shell流程控制语句</h2><h3 id="if条件判断语句"><a href="#if条件判断语句" class="headerlink" title="if条件判断语句"></a>if条件判断语句</h3><pre><code>#单分支
+if [ 条件判断 ]
+then
+代码
+fi
+
+#多分支
+if [ 条件判断 ]
+then
+代码
+elif [ 条件判断 ]
+then
+代码
+fi
+
+</code></pre><p>案例：</p>
+<pre><code>#!/bin/bash
+#如果输入的参数，大于等于60，则输出及格了，如果小于60，则输出不及格
+if [ $1 -ge 60  ]
+then  
+        echo  &quot;及格了&quot;
+elif [ $1 -lt 60  ]
+then
+        echo &quot;不及格&quot;
+fi
+</code></pre><p><img src="https://img-blog.csdnimg.cn/2021071719583583.png" alt="結果"></p>
+<h3 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h3><pre><code>case $变量名 in
+&quot;值1&quot;)
+如果变量的值等于值1 ,则执行程序1
+;;两分号代表结束
+&quot;值2&quot;)
+如果变量的值等于值2，则执行程序2
+;;
+其他分支
+*)
+如果变量的值都不是以上的值，则执行此程序
+;;
+esac
+
+</code></pre><p>案例</p>
+<pre><code>#!/bin/bash
+#当命令行参数是1时，输出&quot;周一&quot;是2时，就输出&quot;周二”，其它情况输出&quot;other&quot; 
+case $1 in
+&quot;1&quot;)
+        echo &quot;周一&quot;
+;;
+&quot;2&quot;)
+        echo &quot;周二&quot;
+;;
+*)
+        echo “other”
+;;
+esac
+
+</code></pre><p><img src="https://img-blog.csdnimg.cn/20210717195857117.png#pic_center" alt="結果"></p>
+<h3 id="for使用"><a href="#for使用" class="headerlink" title="for使用"></a>for使用</h3><pre><code>语法1：
+for 变量 in 值1 值2 ...
+do
+代码
+done
+
+语法2：
+for (( 始值;循环控制条件;量变化 ))
+do
+代码
+done
+
+</code></pre><p>案例：打印命令行输入的参数</p>
+<pre><code>#!/bin/bash
+#$*输出方式  
+for i in &quot;$*&quot;
+do 
+        echo &quot;num is $i&quot;
+done
+#$@方式
+echo &quot;===========&quot;
+for j in &quot;$@&quot;
+do 
+        echo &quot;num is $j&quot;
+done
+
+</code></pre><p>案例：从1加到100的值输出显示</p>
+<pre><code>#!/bin/bash
+SUM=0
+for(( i=1; i&lt;=100; i++  ))
+do
+SUM=$[$SUM+$i]
+done
+echo &quot;sum=$SUM&quot;
+
+</code></pre><h3 id="while使用"><a href="#while使用" class="headerlink" title="while使用"></a>while使用</h3><pre><code>while [ 条件判断式 ]
+do
+代码
+done
+
+</code></pre><p>案例：从命令行输入一个数n，统计从1+……n的值是多少?</p>
+<pre><code>#!/bin/bash
+SUM=0
+i=0
+while [ $i -le $1 ]
+do
+        SUM=$[$SUM+$i]
+        i=$[$i+1]
+done
+echo &quot;结果=$SUM&quot;
+
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="系统函数："><a href="#系统函数：" class="headerlink" title="系统函数："></a>系统函数：</h3><h4 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h4><pre><code>basename [pathname] [suffix](功能：返回完整路径最后/的部分,常用于获取文件名)
+basename [string] [suffix]  (功能：basename命令会删掉所有的前缀包括最后一个/,然后将字符串显示出来)
+suffix为后缀，如果suffix被指定了, basename会将pathname或string中的suffix去掉。
+</code></pre><pre><code># 方式1
+[linux@localhost datas]$ basename /home/linux/banzhang.txt
+banzhang.txt
+
+# 方式2
+[linux@localhost datas]$ basename /home/linux/banzhang.txt .txt
+banzhang
+</code></pre><h4 id="dirname基本语法"><a href="#dirname基本语法" class="headerlink" title="dirname基本语法"></a>dirname基本语法</h4><p>dirname 文件绝对路径 (功能描述:绝对路径中去除文件名(非目录的部分)，然后返回剩下的路径(目录的部分))</p>
+<pre><code>[linux@localhost datas]$ dirname /home/linux/banzhang.txt
+/home/linux
+</code></pre><h4 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h4><p>语法：</p>
+<pre><code>function 函数名 () {
+    程序
+}
+
+</code></pre><pre><code>[function] funname (参数){
+  Action;
+  [return int;]
+}
+[]表示可有可无
+调用直接写函数名: funname [值]
+
+</code></pre><p>实际案例：</p>
+<pre><code>#!/bin/bash
+#案例：计算输入两个参数的和，getSum
+function getSum(){
+        sum=$[$n1+$n2]
+        echo &quot;和是=$sum&quot;
+}
+#输入两个值
+read -p &quot;第一个值=&quot; n1
+read -p &quot;第二个值=&quot; n2
+#调用函数
+getSum $n1 $n2
+
+</code></pre><h3 id="数据备份案例"><a href="#数据备份案例" class="headerlink" title="数据备份案例"></a>数据备份案例</h3><p>需求分析<br>1.每天凌晨2:30备份数据库smile到/data/backup/db<br>2.备份开始和备份结束能够给出相应的提示信息<br>3.备份后的文件要求以备份时间为文件名，并打包成.tar.gz的形式，比如: 2021-07-15 230201.tar.gz<br>4.在备份的同时，检查是否有7天前备份的数据库文件，如果有就将其删除。</p>
+<p>vim /usr/sbin/mysql_db_backup.sh 内容如下</p>
+<pre><code>#!/bin/bash
+#备份目录
+BACKUP=/data/backup/db
+#当前时间
+DATATIME=$(date +%Y-%m-%d_%H%M%S)
+#数据库地址
+HOST=localhost
+#数据库用户名
+DB_USER=root
+#数据库密码
+DB_PW=root6666
+#备份的数据库名
+DATABASE=smile
+#创建备份目录，不存在就创建
+[ ! -d &quot;${BACKUP}/${DATATIME}&quot; ] &amp;&amp; mkdir -p &quot;${BACKUP}/${DATATIME}&quot;
+#备份数据库
+echo &quot;开始备份数据库${DATABASE}&quot;
+mysqldump -u${DB_USER} -p${DB_PW} --host=${HOST} -q -R --databases ${DATABASE} | gzip &gt; ${BACKUP}/${DATATIME}/$DATATIME.sql.gz
+#将备份文件夹处理成.tar.gz的格式
+cd ${BACKUP}
+tar -zcvf $DATATIME.tar.gz ${DATATIME}
+#删除对应的备份目录
+rm -rf ${BACKUP}/${DATATIME}
+#删除7天前的备份
+find ${BACKUP} -atime +7 -name &quot;*.tar.gz&quot; -exec rm -rf {} \;
+echo &quot;备份数据库${DATABASE}成功&quot;
+
+</code></pre><p>定时脚本</p>
+<p>命令行敲crontab -e ，接着输入如下内容</p>
+<pre><code>30 2 * * * /usr/sbin/mysql_db_backup.sh
+</code></pre><p><img src="https://img-blog.csdnimg.cn/20210717200126145.png#pic_center" alt="圖片"></p>
+<p>效果图<img src="https://img-blog.csdnimg.cn/20210717200157753.png" alt="结果"></p>
+<h2 id="shell工具"><a href="#shell工具" class="headerlink" title="shell工具"></a>shell工具</h2><h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><p>cut命令从文件的每一行剪切字节，字符和字段并将这些字节，字符和字段输出<br>cut [选项参数] filename</p>
+<p>-f 列号，提取第几列</p>
+<p>-d 分隔符，按照指定分隔符分隔列</p>
+<pre><code># DESC 切割cut.txt第一列
+[linux@localhost datas]$ cat cut.txt
+dong shen
+guan zhen
+wo wo
+lai lai
+le le
+[linux@localhost datas]$ cut -d &quot; &quot; -f 1 cut.txt
+dong
+guan
+wo
+lai
+le
+
+# DESC 获取第三行第一个单词
+[linux@localhost datas]$ cat cut.txt | grep guan | cut -d &quot; &quot; -f 1
+guan
+
+</code></pre><h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h3><p>sed是一种流编辑器，它一次处理一行内容，处理时，把当前处理的行存储在临时缓冲区中，成为“模式空间”,接着sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕，接着处理下一行，这样不断重复，知道文件末尾，文件内容并没有改变，除非你使用重定向存储输出<br>sed [选项参数] ‘command’ filename</p>
+<p>-e 直接在指令列模式上进行sed的动作编辑</p>
+<p>命令功能描述</p>
+<p>a 新增</p>
+<p>d 删除</p>
+<p>s 查找并替换</p>
+<pre><code># DESC 在第二行后增加mei nv字符
+[linux@localhost datas]$ sed -e &quot;2a mei nv&quot; sed.txt
+dong zhen
+guan zhen
+mei nv
+wo wo
+lai lai
+
+</code></pre><h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><p>awk 一个强大文件分析工具，把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行分析处理</p>
+<pre><code>awk [选项参数] &#39;pattern1 {action1} pattern2{action2}..&#39; filename
+
+</code></pre><p>-F 指定输入文件分隔符</p>
+<p>-v 赋值一个用户定义变量</p>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>sort 命令是在Linux里非常有用，它将文件进行排序，并将排序结果标准输出</p>
+<pre><code>sourt [选项] (参数)
+
+</code></pre><table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n</td>
+<td style="text-align:center">依照数值大小排序</td>
+</tr>
+<tr>
+<td>-t</td>
+<td style="text-align:center">以相反的顺序排序</td>
+</tr>
+<tr>
+<td>-t</td>
+<td style="text-align:center">设置排序时使用的分隔字符</td>
+</tr>
+<tr>
+<td>-k</td>
+<td style="text-align:center">指定需要排序的列</td>
+</tr>
+</tbody>
+</table>
 
         </div>
         <!-- .entry-content -->
@@ -380,7 +723,7 @@ A=$(date)等价于上面的语句
           
             <a href="/2022/11/04/增加-修改-删除/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png">
+                <img class="lazyload" src="" data-src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://pic1.imgdb.cn/item/6364974816f2c2beb11f64e9.png">
               </div>
               <span class="label">
               Next Post</span>
@@ -627,6 +970,13 @@ $(document).ready(function() {
                 <a href="/categories/python/">
                   <i class="fa fa-book" aria-hidden="true"></i>
                   python
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/docker/">
+                  <i class="fa fa-envira" aria-hidden="true"></i>
+                  docker
                 </a>
               </li>
             
